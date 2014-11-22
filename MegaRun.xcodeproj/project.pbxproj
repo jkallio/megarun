@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A62824E1A1E8A7D009AAC5A /* HeatManStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A62824D1A1E8A7D009AAC5A /* HeatManStage.m */; };
+		4A6282521A1E8A8A009AAC5A /* QuickManStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6282511A1E8A8A009AAC5A /* QuickManStage.m */; };
+		4A6282551A1E8AA4009AAC5A /* BubbleManStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6282541A1E8AA4009AAC5A /* BubbleManStage.m */; };
+		4A6282581A1E8ABA009AAC5A /* AirManStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6282571A1E8ABA009AAC5A /* AirManStage.m */; };
+		4A94AFA11A07C0030067AB66 /* libJKGameKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A94AF9C1A07BFF40067AB66 /* libJKGameKit.a */; };
+		4A94AFD11A08FA630067AB66 /* StageSelectLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFD01A08FA630067AB66 /* StageSelectLevel.m */; };
+		4A94AFD91A0900B40067AB66 /* NodeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFD81A0900B40067AB66 /* NodeFactory.m */; };
+		4A94AFDF1A090BE70067AB66 /* PluginControllerHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFDE1A090BE70067AB66 /* PluginControllerHero.m */; };
+		4A94AFE21A0911F70067AB66 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFE11A0911F70067AB66 /* GameData.m */; };
+		4A94AFF01A09657E0067AB66 /* PluginAnimationHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFEF1A09657E0067AB66 /* PluginAnimationHero.m */; };
+		4A94AFFD1A0E42AC0067AB66 /* StageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFFC1A0E42AC0067AB66 /* StageBase.m */; };
+		4AA0F7D91A06DC3600E5756D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0F7D81A06DC3600E5756D /* main.m */; };
+		4AA0F7DC1A06DC3600E5756D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0F7DB1A06DC3600E5756D /* AppDelegate.m */; };
+		4AA0F7DF1A06DC3600E5756D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0F7DE1A06DC3600E5756D /* GameScene.m */; };
+		4AA0F7E41A06DC3600E5756D /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0F7E31A06DC3600E5756D /* GameViewController.m */; };
+		4AA0F7E71A06DC3600E5756D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0F7E51A06DC3600E5756D /* Main.storyboard */; };
+		4AA0F7E91A06DC3600E5756D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0F7E81A06DC3600E5756D /* Images.xcassets */; };
+		4AA0F7EC1A06DC3600E5756D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0F7EA1A06DC3600E5756D /* LaunchScreen.xib */; };
+		4AA0F8021A06DCC200E5756D /* CommonArt.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 4AA0F8011A06DCC200E5756D /* CommonArt.atlas */; };
+		4ABF50AA1A124BA2006CD964 /* HudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50A91A124BA2006CD964 /* HudNode.m */; };
+		4ABF50B11A126521006CD964 /* PluginTouchHandlerHudButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50B01A126521006CD964 /* PluginTouchHandlerHudButton.m */; };
+		4ABF50B71A126BA7006CD964 /* nintendoid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF50B61A126BA7006CD964 /* nintendoid.ttf */; };
+		4ABF50C51A18D2BD006CD964 /* PluginContactHandlerHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A94AF9B1A07BFF40067AB66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A94AF961A07BFF30067AB66 /* JKGameKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4AA0F80C1A06DEC600E5756D;
+			remoteInfo = JKGameKit;
+		};
+		4A94AF9D1A07BFF40067AB66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A94AF961A07BFF30067AB66 /* JKGameKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4AA0F8171A06DEC600E5756D;
+			remoteInfo = JKGameKitTests;
+		};
+		4A94AF9F1A07BFFF0067AB66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A94AF961A07BFF30067AB66 /* JKGameKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AA0F80B1A06DEC600E5756D;
+			remoteInfo = JKGameKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A62824C1A1E8A7D009AAC5A /* HeatManStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeatManStage.h; sourceTree = "<group>"; };
+		4A62824D1A1E8A7D009AAC5A /* HeatManStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeatManStage.m; sourceTree = "<group>"; };
+		4A6282501A1E8A8A009AAC5A /* QuickManStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickManStage.h; sourceTree = "<group>"; };
+		4A6282511A1E8A8A009AAC5A /* QuickManStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickManStage.m; sourceTree = "<group>"; };
+		4A6282531A1E8AA4009AAC5A /* BubbleManStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleManStage.h; sourceTree = "<group>"; };
+		4A6282541A1E8AA4009AAC5A /* BubbleManStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleManStage.m; sourceTree = "<group>"; };
+		4A6282561A1E8ABA009AAC5A /* AirManStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirManStage.h; sourceTree = "<group>"; };
+		4A6282571A1E8ABA009AAC5A /* AirManStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirManStage.m; sourceTree = "<group>"; };
+		4A94AF961A07BFF30067AB66 /* JKGameKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JKGameKit.xcodeproj; path = ../Lib/JKGameKit/JKGameKit.xcodeproj; sourceTree = "<group>"; };
+		4A94AFCF1A08FA630067AB66 /* StageSelectLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectLevel.h; sourceTree = "<group>"; };
+		4A94AFD01A08FA630067AB66 /* StageSelectLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSelectLevel.m; sourceTree = "<group>"; };
+		4A94AFD71A0900B40067AB66 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
+		4A94AFD81A0900B40067AB66 /* NodeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeFactory.m; sourceTree = "<group>"; };
+		4A94AFDA1A0900C60067AB66 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		4A94AFDD1A090BE70067AB66 /* PluginControllerHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginControllerHero.h; sourceTree = "<group>"; };
+		4A94AFDE1A090BE70067AB66 /* PluginControllerHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginControllerHero.m; sourceTree = "<group>"; };
+		4A94AFE01A0911F70067AB66 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		4A94AFE11A0911F70067AB66 /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
+		4A94AFEE1A09657E0067AB66 /* PluginAnimationHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginAnimationHero.h; sourceTree = "<group>"; };
+		4A94AFEF1A09657E0067AB66 /* PluginAnimationHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginAnimationHero.m; sourceTree = "<group>"; };
+		4A94AFFB1A0E42AC0067AB66 /* StageBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageBase.h; sourceTree = "<group>"; };
+		4A94AFFC1A0E42AC0067AB66 /* StageBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageBase.m; sourceTree = "<group>"; };
+		4AA0F7D31A06DC3600E5756D /* MegaRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA0F7D71A06DC3600E5756D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AA0F7D81A06DC3600E5756D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4AA0F7DA1A06DC3600E5756D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4AA0F7DB1A06DC3600E5756D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4AA0F7DD1A06DC3600E5756D /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		4AA0F7DE1A06DC3600E5756D /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		4AA0F7E21A06DC3600E5756D /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		4AA0F7E31A06DC3600E5756D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		4AA0F7E61A06DC3600E5756D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4AA0F7E81A06DC3600E5756D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4AA0F7EB1A06DC3600E5756D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4AA0F8011A06DCC200E5756D /* CommonArt.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = CommonArt.atlas; sourceTree = "<group>"; };
+		4ABF50A81A124BA2006CD964 /* HudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudNode.h; sourceTree = "<group>"; };
+		4ABF50A91A124BA2006CD964 /* HudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudNode.m; sourceTree = "<group>"; };
+		4ABF50AF1A126521006CD964 /* PluginTouchHandlerHudButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginTouchHandlerHudButton.h; sourceTree = "<group>"; };
+		4ABF50B01A126521006CD964 /* PluginTouchHandlerHudButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginTouchHandlerHudButton.m; sourceTree = "<group>"; };
+		4ABF50B61A126BA7006CD964 /* nintendoid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nintendoid.ttf; sourceTree = "<group>"; };
+		4ABF50C31A18D2BD006CD964 /* PluginContactHandlerHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContactHandlerHero.h; sourceTree = "<group>"; };
+		4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContactHandlerHero.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AA0F7D01A06DC3600E5756D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A94AFA11A07C0030067AB66 /* libJKGameKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A94AF971A07BFF30067AB66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AF9C1A07BFF40067AB66 /* libJKGameKit.a */,
+				4A94AF9E1A07BFF40067AB66 /* JKGameKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A94AFA21A07C04F0067AB66 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AF961A07BFF30067AB66 /* JKGameKit.xcodeproj */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		4A94AFD31A08FE590067AB66 /* Level stages */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFFB1A0E42AC0067AB66 /* StageBase.h */,
+				4A94AFFC1A0E42AC0067AB66 /* StageBase.m */,
+				4A94AFCF1A08FA630067AB66 /* StageSelectLevel.h */,
+				4A94AFD01A08FA630067AB66 /* StageSelectLevel.m */,
+				4A6282561A1E8ABA009AAC5A /* AirManStage.h */,
+				4A6282571A1E8ABA009AAC5A /* AirManStage.m */,
+				4A6282531A1E8AA4009AAC5A /* BubbleManStage.h */,
+				4A6282541A1E8AA4009AAC5A /* BubbleManStage.m */,
+				4A62824C1A1E8A7D009AAC5A /* HeatManStage.h */,
+				4A62824D1A1E8A7D009AAC5A /* HeatManStage.m */,
+				4A6282501A1E8A8A009AAC5A /* QuickManStage.h */,
+				4A6282511A1E8A8A009AAC5A /* QuickManStage.m */,
+			);
+			name = "Level stages";
+			sourceTree = "<group>";
+		};
+		4A94AFD41A08FE6C0067AB66 /* Game classes */ = {
+			isa = PBXGroup;
+			children = (
+				4AA0F7DD1A06DC3600E5756D /* GameScene.h */,
+				4AA0F7DE1A06DC3600E5756D /* GameScene.m */,
+				4ABF50A81A124BA2006CD964 /* HudNode.h */,
+				4ABF50A91A124BA2006CD964 /* HudNode.m */,
+				4A94AFD31A08FE590067AB66 /* Level stages */,
+			);
+			name = "Game classes";
+			sourceTree = "<group>";
+		};
+		4A94AFD51A08FE890067AB66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF50B41A126B90006CD964 /* Fonts */,
+				4AA0F8011A06DCC200E5756D /* CommonArt.atlas */,
+				4AA0F7E81A06DC3600E5756D /* Images.xcassets */,
+				4AA0F7D61A06DC3600E5756D /* Supporting Files */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4A94AFD61A0900830067AB66 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFDA1A0900C60067AB66 /* Defines.h */,
+				4A94AFE01A0911F70067AB66 /* GameData.h */,
+				4A94AFE11A0911F70067AB66 /* GameData.m */,
+				4A94AFD71A0900B40067AB66 /* NodeFactory.h */,
+				4A94AFD81A0900B40067AB66 /* NodeFactory.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		4A94AFDB1A090BCB0067AB66 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFED1A09656B0067AB66 /* Animations */,
+				4ABF50C21A18D26C006CD964 /* ContactHandlers */,
+				4A94AFDC1A090BD40067AB66 /* Controllers */,
+				4ABF50B21A126528006CD964 /* TouchHandlers */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		4A94AFDC1A090BD40067AB66 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFDD1A090BE70067AB66 /* PluginControllerHero.h */,
+				4A94AFDE1A090BE70067AB66 /* PluginControllerHero.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4A94AFED1A09656B0067AB66 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				4A94AFEE1A09657E0067AB66 /* PluginAnimationHero.h */,
+				4A94AFEF1A09657E0067AB66 /* PluginAnimationHero.m */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		4AA0F7CA1A06DC3600E5756D = {
+			isa = PBXGroup;
+			children = (
+				4AA0F7D51A06DC3600E5756D /* MegaChallenge */,
+				4A94AFA21A07C04F0067AB66 /* Libs */,
+				4AA0F7D41A06DC3600E5756D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AA0F7D41A06DC3600E5756D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AA0F7D31A06DC3600E5756D /* MegaRun.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AA0F7D51A06DC3600E5756D /* MegaChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				4AA0F7E51A06DC3600E5756D /* Main.storyboard */,
+				4AA0F7EA1A06DC3600E5756D /* LaunchScreen.xib */,
+				4AA0F7DA1A06DC3600E5756D /* AppDelegate.h */,
+				4AA0F7DB1A06DC3600E5756D /* AppDelegate.m */,
+				4AA0F7E21A06DC3600E5756D /* GameViewController.h */,
+				4AA0F7E31A06DC3600E5756D /* GameViewController.m */,
+				4A94AFD61A0900830067AB66 /* Common */,
+				4A94AFD41A08FE6C0067AB66 /* Game classes */,
+				4A94AFDB1A090BCB0067AB66 /* Plugins */,
+				4A94AFD51A08FE890067AB66 /* Resources */,
+			);
+			path = MegaChallenge;
+			sourceTree = "<group>";
+		};
+		4AA0F7D61A06DC3600E5756D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AA0F7D71A06DC3600E5756D /* Info.plist */,
+				4AA0F7D81A06DC3600E5756D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ABF50B21A126528006CD964 /* TouchHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF50AF1A126521006CD964 /* PluginTouchHandlerHudButton.h */,
+				4ABF50B01A126521006CD964 /* PluginTouchHandlerHudButton.m */,
+			);
+			name = TouchHandlers;
+			sourceTree = "<group>";
+		};
+		4ABF50B41A126B90006CD964 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF50B61A126BA7006CD964 /* nintendoid.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		4ABF50C21A18D26C006CD964 /* ContactHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				4ABF50C31A18D2BD006CD964 /* PluginContactHandlerHero.h */,
+				4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */,
+			);
+			name = ContactHandlers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AA0F7D21A06DC3600E5756D /* MegaRun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AA0F7FB1A06DC3600E5756D /* Build configuration list for PBXNativeTarget "MegaRun" */;
+			buildPhases = (
+				4AA0F7CF1A06DC3600E5756D /* Sources */,
+				4AA0F7D01A06DC3600E5756D /* Frameworks */,
+				4AA0F7D11A06DC3600E5756D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A94AFA01A07BFFF0067AB66 /* PBXTargetDependency */,
+			);
+			name = MegaRun;
+			productName = MegaChallenge;
+			productReference = 4AA0F7D31A06DC3600E5756D /* MegaRun.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AA0F7CB1A06DC3600E5756D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Kallio;
+				TargetAttributes = {
+					4AA0F7D21A06DC3600E5756D = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 4AA0F7CE1A06DC3600E5756D /* Build configuration list for PBXProject "MegaRun" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AA0F7CA1A06DC3600E5756D;
+			productRefGroup = 4AA0F7D41A06DC3600E5756D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4A94AF971A07BFF30067AB66 /* Products */;
+					ProjectRef = 4A94AF961A07BFF30067AB66 /* JKGameKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4AA0F7D21A06DC3600E5756D /* MegaRun */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4A94AF9C1A07BFF40067AB66 /* libJKGameKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJKGameKit.a;
+			remoteRef = 4A94AF9B1A07BFF40067AB66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4A94AF9E1A07BFF40067AB66 /* JKGameKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JKGameKitTests.xctest;
+			remoteRef = 4A94AF9D1A07BFF40067AB66 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AA0F7D11A06DC3600E5756D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA0F8021A06DCC200E5756D /* CommonArt.atlas in Resources */,
+				4ABF50B71A126BA7006CD964 /* nintendoid.ttf in Resources */,
+				4AA0F7EC1A06DC3600E5756D /* LaunchScreen.xib in Resources */,
+				4AA0F7E91A06DC3600E5756D /* Images.xcassets in Resources */,
+				4AA0F7E71A06DC3600E5756D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AA0F7CF1A06DC3600E5756D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A94AFDF1A090BE70067AB66 /* PluginControllerHero.m in Sources */,
+				4A94AFF01A09657E0067AB66 /* PluginAnimationHero.m in Sources */,
+				4A94AFE21A0911F70067AB66 /* GameData.m in Sources */,
+				4A62824E1A1E8A7D009AAC5A /* HeatManStage.m in Sources */,
+				4A6282581A1E8ABA009AAC5A /* AirManStage.m in Sources */,
+				4A94AFD91A0900B40067AB66 /* NodeFactory.m in Sources */,
+				4ABF50AA1A124BA2006CD964 /* HudNode.m in Sources */,
+				4AA0F7E41A06DC3600E5756D /* GameViewController.m in Sources */,
+				4A6282551A1E8AA4009AAC5A /* BubbleManStage.m in Sources */,
+				4AA0F7DC1A06DC3600E5756D /* AppDelegate.m in Sources */,
+				4AA0F7DF1A06DC3600E5756D /* GameScene.m in Sources */,
+				4AA0F7D91A06DC3600E5756D /* main.m in Sources */,
+				4ABF50B11A126521006CD964 /* PluginTouchHandlerHudButton.m in Sources */,
+				4A6282521A1E8A8A009AAC5A /* QuickManStage.m in Sources */,
+				4ABF50C51A18D2BD006CD964 /* PluginContactHandlerHero.m in Sources */,
+				4A94AFD11A08FA630067AB66 /* StageSelectLevel.m in Sources */,
+				4A94AFFD1A0E42AC0067AB66 /* StageBase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A94AFA01A07BFFF0067AB66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JKGameKit;
+			targetProxy = 4A94AF9F1A07BFFF0067AB66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4AA0F7E51A06DC3600E5756D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AA0F7E61A06DC3600E5756D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4AA0F7EA1A06DC3600E5756D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AA0F7EB1A06DC3600E5756D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4AA0F7F91A06DC3600E5756D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Lib/JKGameKit/\"";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AA0F7FA1A06DC3600E5756D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Lib/JKGameKit/\"";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AA0F7FC1A06DC3600E5756D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../Lib/JKGameKit\"",
+				);
+				INFOPLIST_FILE = MegaChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = MegaRun;
+			};
+			name = Debug;
+		};
+		4AA0F7FD1A06DC3600E5756D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../Lib/JKGameKit\"",
+				);
+				INFOPLIST_FILE = MegaChallenge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = MegaRun;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AA0F7CE1A06DC3600E5756D /* Build configuration list for PBXProject "MegaRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA0F7F91A06DC3600E5756D /* Debug */,
+				4AA0F7FA1A06DC3600E5756D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AA0F7FB1A06DC3600E5756D /* Build configuration list for PBXNativeTarget "MegaRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AA0F7FC1A06DC3600E5756D /* Debug */,
+				4AA0F7FD1A06DC3600E5756D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AA0F7CB1A06DC3600E5756D /* Project object */;
+}

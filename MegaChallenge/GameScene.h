@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Kallio. All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
+#import <JKGameKit/JKGameKit.h>
 
-@interface GameScene : SKScene
-
+@interface GameScene : JKGameScene
 @end
