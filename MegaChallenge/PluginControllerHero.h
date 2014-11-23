@@ -32,4 +32,13 @@ typedef enum _EState
 @property (nonatomic) CGFloat jumpForce;
 @property (nonatomic) CGVector maxVelocity;
 
+#pragma mark -- Contacting Nodes
+@property (nonatomic, weak) JKSpriteNode* jumpSensor;
+@property (nonatomic, weak) JKSpriteNode* leftSensor;
+@property (nonatomic, weak) JKSpriteNode* rightSensor;
+@property (nonatomic) BOOL leftSensorContact;
+@property (nonatomic) BOOL rightSensorContact;
+@property (nonatomic) BOOL jumpSensorContact;
+
+- (void) updateContactFlags;
 @end

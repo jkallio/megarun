@@ -9,6 +9,7 @@
 #import <JKGameKit/JKGameKit.h>
 
 @interface StageBase : JKWorldNode
+@property (nonatomic, weak) JKGameNode* telePad;
 @property (nonatomic) NSInteger score;
 @property (nonatomic) NSInteger hiScore;
 - (NSArray*) levelMap;

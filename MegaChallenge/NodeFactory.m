@@ -10,6 +10,9 @@
 #import "PluginControllerHero.h"
 #import "PluginAnimationHero.h"
 #import "PluginContactHandlerHero.h"
+#import "PluginContactHandlerHeroJumpSensor.h"
+#import "PluginContactHandlerHeroLeftSensor.h"
+#import "PluginContactHandlerHeroRightSensor.h"
 #import "NodeFactory.h"
 
 @implementation NodeFactory
@@ -28,6 +31,12 @@
             if (obj != nil)
             {
                 [objects addObject:obj];
+                
+                if (objTypeNum == OBJ_TYPE_TELEPAD)
+                {
+                    JKGameNode* hero = [NodeFactory createHeroWithPosition:CGPointMake(obj.position.x, 1000.0f)];
+                    [objects addObject:hero];
+                }
             }
             ++offsetX;
         }
@@ -59,6 +68,8 @@
         case OBJ_TYPE_TELEPORT_BUBBLEMAN:   // no break
         case OBJ_TYPE_TELEPORT_AIRMAN:      // no break
         case OBJ_TYPE_TELEPORT_STAGESEL:    obj = [NodeFactory createTeleport:type Position:position]; break;
+            
+        case OBJ_TYPE_TELEPAD: obj = [NodeFactory createTelePadWithPosition:position]; break; 
             
         default: JKAssert(NO, @"TODO: Invalid type"); break;
     }
@@ -98,18 +109,39 @@
     
     JKSpriteNode* jumpSensor = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/2.5, hero.spriteNode.size.height/4)];
     jumpSensor.position = CGPointMake(0.0f, -hero.spriteNode.size.height/2 + jumpSensor.size.height/2);
-    [PluginContactHandlerHero createAndAttachToNode:jumpSensor];
+    [PluginContactHandlerHeroJumpSensor createAndAttachToNode:jumpSensor];
     [hero setSensor:jumpSensor Name:SENSOR_NAME_JUMP];
     
     JKSpriteNode* leftSensor = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/10, hero.spriteNode.size.height/2.5)];
     leftSensor.position = CGPointMake(-hero.spriteNode.size.width/2 + leftSensor.size.width, 0.0f);
+    [PluginContactHandlerHeroLeftSensor createAndAttachToNode:leftSensor];
     [hero setSensor:leftSensor Name:SENSOR_NAME_LEFT];
     
     JKSpriteNode* rightSensor = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/10, hero.spriteNode.size.height/2.5)];
     rightSensor.position = CGPointMake(hero.spriteNode.size.width/2 - rightSensor.size.width, 0.0f);
+    [PluginContactHandlerHeroRightSensor createAndAttachToNode:rightSensor];
     [hero setSensor:rightSensor Name:SENSOR_NAME_RIGHT];
 
     return hero;
+}
+
++ (JKGameNode*) createTelePadWithPosition:(CGPoint)position
+{
+    JKGameNode* pad = [JKGameNode node];
+    pad.objType = OBJ_TYPE_TELEPAD;
+    pad.name = NODE_NAME_TELEPAD;
+    pad.position = CGPointMake(position.x, position.y - kBlockHeight/2);
+    pad.zPosition = Z_POS_STATIC;
+    
+    [pad setSpriteNode:[JKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(kBlockWidth, kBlockHeight/10)]];
+    
+    pad.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:pad.spriteNode.size];
+    pad.physicsBody.dynamic = NO;
+    pad.physicsBody.categoryBitMask = kCatSensor;
+    pad.physicsBody.collisionBitMask = kCollisionMaskSensor;
+    pad.physicsBody.contactTestBitMask = kContactMaskSensor;
+    
+    return pad;
 }
 
 + (JKGameNode*) createBlock:(NSInteger)type Position:(CGPoint)position

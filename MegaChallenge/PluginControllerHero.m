@@ -15,9 +15,6 @@
 @property (nonatomic) NSTimeInterval timeInAir;
 @property (nonatomic) NSTimeInterval jumpTimeout;
 @property (nonatomic) BOOL canJump;
-@property (nonatomic, weak) JKSpriteNode* jumpSensor;
-@property (nonatomic, weak) JKSpriteNode* leftSensor;
-@property (nonatomic, weak) JKSpriteNode* rightSensor;
 - (CGVector) applyForces:(CGVector)curVelocity Timestep:(NSTimeInterval)dt;
 @end
 
@@ -35,22 +32,31 @@
         _timeInAir = 0.0f;
         _maxVelocity = CGVectorMake(250.0f, 400.0f);
         
+        _leftSensorContact = NO;
+        _rightSensorContact = NO;
+        _jumpSensorContact = NO;
+        _onGround = NO;
         _canJump = NO;
     }
     return self;
 }
 
+- (void) onNodeEnter
+{
+    self.state = STATE_TELEPORTING_DOWN;
+}
+
 - (void) onUpdate:(NSTimeInterval)dt
 {
-    self.onGround = self.jumpSensor.physicsBody.allContactedBodies.count > 0;
-
+    self.onGround = self.jumpSensorContact;
+    
     if (self.isTeleporting)
     {
         switch (self.state)
         {
             default:
-            case STATE_TELEPORTING_DOWN: self.node.physicsBody.velocity = CGVectorMake(0.0f, -750.0f);
-            case STATE_TELEPORTING_UP: self.node.physicsBody.velocity = CGVectorMake(0.0f, 750.0f);
+            case STATE_TELEPORTING_DOWN: self.node.physicsBody.velocity = CGVectorMake(0.0f, -750.0f); break;
+            case STATE_TELEPORTING_UP: self.node.physicsBody.velocity = CGVectorMake(0.0f, 750.0f); break;
         }
     }
     else
@@ -58,7 +64,7 @@
         self.node.physicsBody.velocity = [self applyForces:self.node.physicsBody.velocity Timestep:dt];
     }
     
-    self.world.camera.targetPosition = self.node.position;
+    //self.world.camera.targetPosition = self.node.position;
     
     self.timeSincePrevJump += dt;
     if (!self.onGround)
@@ -72,7 +78,7 @@
 {
     if (self.joypadLeftDown)
     {
-        if (self.leftSensor.physicsBody.allContactedBodies.count == 0)
+        if (!self.leftSensorContact)
         {
             if (!self.onGround && curVelocity.dx > 0.0f)
             {
@@ -83,7 +89,7 @@
     }
     else if (self.joypadRightDown)
     {
-        if (self.rightSensor.physicsBody.allContactedBodies.count == 0)
+        if (!self.rightSensorContact)
         {
             if (!self.onGround && curVelocity.dx < 0.0f)
             {
@@ -193,13 +199,77 @@
 
 - (void) setOnGround:(BOOL)onGround
 {
-    if (onGround && _onGround)
+    if (onGround && !_onGround)
     {
         self.jumpTimeout = 0.0f;
         self.timeInAir = 0.0f;
         self.canJump = YES;
     }
     _onGround = onGround;
+}
+
+- (void) setState:(EState)state
+{
+    if (state != _state)
+    {
+        switch (state)
+        {
+            case STATE_NORMAL:
+            {
+                self.node.physicsBody.collisionBitMask = kCollisionMaskHero;
+            } break;
+                
+            case STATE_TELEPORTING_DOWN:
+            case STATE_TELEPORTING_UP:
+            {
+                self.node.physicsBody.collisionBitMask = kMaskNull;
+            } break;
+        }
+    }
+    _state = state;
+}
+
+- (void) updateContactFlags
+{
+    BOOL contact = NO;
+    for (SKPhysicsBody* body in self.jumpSensor.physicsBody.allContactedBodies)
+    {
+        if (body.collisionBitMask & self.node.physicsBody.collisionBitMask)
+        {
+            contact = YES;
+            break;
+        }
+    }
+    _jumpSensorContact = contact;
+    
+    contact = NO;
+    for (SKPhysicsBody* body in self.rightSensor.physicsBody.allContactedBodies)
+    {
+        if (body.collisionBitMask & self.node.physicsBody.collisionBitMask)
+        {
+            contact = YES;
+            break;
+        }
+    }
+    _rightSensorContact = contact;
+    
+    contact = NO;
+    for (SKPhysicsBody* body in self.leftSensor.physicsBody.allContactedBodies)
+    {
+        if (body.collisionBitMask & self.node.physicsBody.collisionBitMask)
+        {
+            contact = YES;
+            break;
+        }
+    }
+    _leftSensorContact = contact;
+
+    /*
+    JKDebugLog(@"Left=%@, Right=%@, Jump=%@",
+               _leftSensorContact ? @"YES" : @"NO",
+               _rightSensorContact ? @"YES" : @"NO",
+               _jumpSensorContact ? @"YES" : @"NO");
+    */
 }
 
 @end

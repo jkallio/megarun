@@ -11,6 +11,9 @@
 		4A6282521A1E8A8A009AAC5A /* QuickManStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6282511A1E8A8A009AAC5A /* QuickManStage.m */; };
 		4A6282551A1E8AA4009AAC5A /* BubbleManStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6282541A1E8AA4009AAC5A /* BubbleManStage.m */; };
 		4A6282581A1E8ABA009AAC5A /* AirManStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6282571A1E8ABA009AAC5A /* AirManStage.m */; };
+		4A62825B1A20C4A5009AAC5A /* PluginContactHandlerHeroJumpSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A62825A1A20C4A5009AAC5A /* PluginContactHandlerHeroJumpSensor.m */; };
+		4A6282601A21DB3F009AAC5A /* PluginContactHandlerHeroLeftSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A62825D1A21DB3F009AAC5A /* PluginContactHandlerHeroLeftSensor.m */; };
+		4A6282611A21DB3F009AAC5A /* PluginContactHandlerHeroRightSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A62825F1A21DB3F009AAC5A /* PluginContactHandlerHeroRightSensor.m */; };
 		4A94AFA11A07C0030067AB66 /* libJKGameKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A94AF9C1A07BFF40067AB66 /* libJKGameKit.a */; };
 		4A94AFD11A08FA630067AB66 /* StageSelectLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFD01A08FA630067AB66 /* StageSelectLevel.m */; };
 		4A94AFD91A0900B40067AB66 /* NodeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFD81A0900B40067AB66 /* NodeFactory.m */; };
@@ -65,6 +68,12 @@
 		4A6282541A1E8AA4009AAC5A /* BubbleManStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleManStage.m; sourceTree = "<group>"; };
 		4A6282561A1E8ABA009AAC5A /* AirManStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirManStage.h; sourceTree = "<group>"; };
 		4A6282571A1E8ABA009AAC5A /* AirManStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirManStage.m; sourceTree = "<group>"; };
+		4A6282591A20C4A5009AAC5A /* PluginContactHandlerHeroJumpSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContactHandlerHeroJumpSensor.h; sourceTree = "<group>"; };
+		4A62825A1A20C4A5009AAC5A /* PluginContactHandlerHeroJumpSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContactHandlerHeroJumpSensor.m; sourceTree = "<group>"; };
+		4A62825C1A21DB3F009AAC5A /* PluginContactHandlerHeroLeftSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContactHandlerHeroLeftSensor.h; sourceTree = "<group>"; };
+		4A62825D1A21DB3F009AAC5A /* PluginContactHandlerHeroLeftSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContactHandlerHeroLeftSensor.m; sourceTree = "<group>"; };
+		4A62825E1A21DB3F009AAC5A /* PluginContactHandlerHeroRightSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContactHandlerHeroRightSensor.h; sourceTree = "<group>"; };
+		4A62825F1A21DB3F009AAC5A /* PluginContactHandlerHeroRightSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContactHandlerHeroRightSensor.m; sourceTree = "<group>"; };
 		4A94AF961A07BFF30067AB66 /* JKGameKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JKGameKit.xcodeproj; path = ../Lib/JKGameKit/JKGameKit.xcodeproj; sourceTree = "<group>"; };
 		4A94AFCF1A08FA630067AB66 /* StageSelectLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectLevel.h; sourceTree = "<group>"; };
 		4A94AFD01A08FA630067AB66 /* StageSelectLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSelectLevel.m; sourceTree = "<group>"; };
@@ -278,6 +287,12 @@
 			children = (
 				4ABF50C31A18D2BD006CD964 /* PluginContactHandlerHero.h */,
 				4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */,
+				4A62825C1A21DB3F009AAC5A /* PluginContactHandlerHeroLeftSensor.h */,
+				4A62825D1A21DB3F009AAC5A /* PluginContactHandlerHeroLeftSensor.m */,
+				4A62825E1A21DB3F009AAC5A /* PluginContactHandlerHeroRightSensor.h */,
+				4A62825F1A21DB3F009AAC5A /* PluginContactHandlerHeroRightSensor.m */,
+				4A6282591A20C4A5009AAC5A /* PluginContactHandlerHeroJumpSensor.h */,
+				4A62825A1A20C4A5009AAC5A /* PluginContactHandlerHeroJumpSensor.m */,
 			);
 			name = ContactHandlers;
 			sourceTree = "<group>";
@@ -389,7 +404,10 @@
 				4A6282551A1E8AA4009AAC5A /* BubbleManStage.m in Sources */,
 				4AA0F7DC1A06DC3600E5756D /* AppDelegate.m in Sources */,
 				4AA0F7DF1A06DC3600E5756D /* GameScene.m in Sources */,
+				4A6282611A21DB3F009AAC5A /* PluginContactHandlerHeroRightSensor.m in Sources */,
 				4AA0F7D91A06DC3600E5756D /* main.m in Sources */,
+				4A62825B1A20C4A5009AAC5A /* PluginContactHandlerHeroJumpSensor.m in Sources */,
+				4A6282601A21DB3F009AAC5A /* PluginContactHandlerHeroLeftSensor.m in Sources */,
 				4ABF50B11A126521006CD964 /* PluginTouchHandlerHudButton.m in Sources */,
 				4A6282521A1E8A8A009AAC5A /* QuickManStage.m in Sources */,
 				4ABF50C51A18D2BD006CD964 /* PluginContactHandlerHero.m in Sources */,

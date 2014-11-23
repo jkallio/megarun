@@ -9,7 +9,10 @@
 #import "Defines.h"
 #import "HudNode.h"
 #import "NodeFactory.h"
+#import "PluginControllerHero.h"
 #import "StageBase.h"
+
+#define _heroCtrl ((PluginControllerHero*)self.hero.controller)
 
 @implementation StageBase
 
@@ -22,15 +25,15 @@
 - (void) LoadLevel
 {
     [super LoadLevel];
-    
-    JKGameNode* hero = [NodeFactory createHeroWithPosition:CGPointZero];
-    [self addChild:hero];
-    self.hero = hero;
-    
+        
     NSArray* levelObjects = [NodeFactory createLevelMap:[self levelMap]];
     for (JKGameNode* node in levelObjects)
     {
         [self addChild:node];
+        if (node.objType == OBJ_TYPE_TELEPAD)
+        {
+            self.camera.position = node.position;
+        }
     }
 }
 
@@ -42,7 +45,22 @@
 
 - (void) onUpdate:(NSTimeInterval)dt
 {
-    self.camera.targetPosition = self.hero.position;
+    switch (_heroCtrl.state)
+    {
+        case STATE_NORMAL: self.camera.targetPosition = self.hero.position; break;
+        case STATE_TELEPORTING_DOWN: self.camera.targetPosition = self.telePad.position; break;
+        case STATE_TELEPORTING_UP: break; // no update;
+        default: break;
+    }
+}
+
+- (JKGameNode*) telePad
+{
+    if (!_telePad)
+    {
+        _telePad = [JKGameNode cast:[self childNodeWithName:NODE_NAME_TELEPAD]];
+    }
+    return _telePad;
 }
 
 @end

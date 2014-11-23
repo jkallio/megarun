@@ -29,6 +29,10 @@
 #define OBJ_TYPE_TELEPORT_STAGESEL  OBJ_TYPE_TELEPORT_BASE + 5
 #define OBJ_TYPE_TELEPORT_END       OBJ_TYPE_TELEPORT_BASE + 6
 
+#define OBJ_TYPE_SPECIAL_BASE       OBJ_TYPE_TELEPORT_END
+#define OBJ_TYPE_TELEPAD            OBJ_TYPE_SPECIAL_BASE + 1
+#define OBJ_TYPE_SPECIAL_END        OBJ_TYPE_SPEICAL_BASE + 2
+
 #define IS_DYNAMIC_NODE(x) (x > OBJ_TYPE_DYNAMIC_BASE && x < OBJ_TYPE_DYNAMIC_END)
 #define IS_STATIC_NODE(x) (x > OBJ_TYPE_STATIC_BASE && x < OBJ_TYPE_STATIC_END)
 #define IS_TELEPORT_NODE(x) (x > OBJ_TYPE_TELEPORT_BASE && x < OBJ_TYPE_TELEPORT_END)
@@ -40,9 +44,9 @@
 #define NODE_NAME_HUD_HISCORE   @"NameHiScore"
 #define NODE_NAME_HUD_BACKFRAME @"NameHudBackframe"
 
-#define NODE_NAME_HERO          @"NameHero"
 #define NODE_NAME_BLOCK         @"NameBlock"
 #define NODE_NAME_TELEPORT      @"NameTeleport"
+#define NODE_NAME_TELEPAD       @"NameTelepad"
 
 #define SENSOR_NAME_JUMP        @"SensorJump"
 #define SENSOR_NAME_LEFT        @"SensorLeft"
