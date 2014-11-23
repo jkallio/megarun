@@ -20,14 +20,14 @@
 + (NSArray*) createLevelMap:(NSArray *)levelMap
 {
     NSMutableArray* objects = [NSMutableArray new];
-    CGFloat posY = 5 * kBlockHeight;
+    CGFloat posY = 0;
     NSInteger offsetX = 0;
     for (NSNumber* objType in levelMap)
     {
         NSInteger objTypeNum = [objType integerValue];
         if (objTypeNum >= 0)
         {
-            JKGameNode* obj = [NodeFactory createObjectWithType:objTypeNum Position:CGPointMake((-5 * kBlockWidth) + (offsetX * kBlockWidth), posY)];
+            JKGameNode* obj = [NodeFactory createObjectWithType:objTypeNum Position:CGPointMake((offsetX * kBlockWidth), posY)];
             if (obj != nil)
             {
                 [objects addObject:obj];
@@ -107,18 +107,21 @@
     [PluginControllerHero createAndAttachToNode:hero];
     [PluginContactHandlerHero createAndAttachToNode:hero];
     
-    JKSpriteNode* jumpSensor = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/2.5, hero.spriteNode.size.height/4)];
-    jumpSensor.position = CGPointMake(0.0f, -hero.spriteNode.size.height/2 + jumpSensor.size.height/2);
+    JKGameNode* jumpSensor = [JKGameNode node];
+    jumpSensor.spriteNode = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/2.5, hero.spriteNode.size.height/4)];
+    jumpSensor.position = CGPointMake(0.0f, -hero.spriteNode.size.height/2 + jumpSensor.spriteNode.size.height/2);
     [PluginContactHandlerHeroJumpSensor createAndAttachToNode:jumpSensor];
     [hero setSensor:jumpSensor Name:SENSOR_NAME_JUMP];
     
-    JKSpriteNode* leftSensor = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/10, hero.spriteNode.size.height/2.5)];
-    leftSensor.position = CGPointMake(-hero.spriteNode.size.width/2 + leftSensor.size.width, 0.0f);
+    JKGameNode* leftSensor = [JKGameNode node];
+    leftSensor.spriteNode = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/10, hero.spriteNode.size.height/2.5)];
+    leftSensor.position = CGPointMake(-hero.spriteNode.size.width/2 + leftSensor.spriteNode.size.width, 0.0f);
     [PluginContactHandlerHeroLeftSensor createAndAttachToNode:leftSensor];
     [hero setSensor:leftSensor Name:SENSOR_NAME_LEFT];
     
-    JKSpriteNode* rightSensor = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/10, hero.spriteNode.size.height/2.5)];
-    rightSensor.position = CGPointMake(hero.spriteNode.size.width/2 - rightSensor.size.width, 0.0f);
+    JKGameNode* rightSensor = [JKGameNode node];
+    rightSensor.spriteNode = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(hero.spriteNode.size.width/10, hero.spriteNode.size.height/2.5)];
+    rightSensor.position = CGPointMake(hero.spriteNode.size.width/2 - rightSensor.spriteNode.size.width, 0.0f);
     [PluginContactHandlerHeroRightSensor createAndAttachToNode:rightSensor];
     [hero setSensor:rightSensor Name:SENSOR_NAME_RIGHT];
 
@@ -191,7 +194,9 @@
     teleport.physicsBody.contactTestBitMask = kContactMaskStaticObj;
     
     
-    JKSpriteNode* sensor = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(teleport.spriteNode.size.width/10, teleport.spriteNode.size.height/3)];
+    JKGameNode* sensor = [JKGameNode node];
+    sensor.objType = OBJ_TYPE_SENSOR;
+    sensor.spriteNode = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(teleport.spriteNode.size.width/10, teleport.spriteNode.size.height/3)];
     sensor.position = CGPointMake(0, teleport.spriteNode.size.height/2);
     [teleport setSensor:sensor Name:SENSOR_NAME_TELEPORT];
     

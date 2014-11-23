@@ -170,7 +170,7 @@
     return _state == STATE_TELEPORTING_DOWN || _state == STATE_TELEPORTING_UP;
 }
 
-- (JKSpriteNode*) jumpSensor
+- (JKGameNode*) jumpSensor
 {
     if (!_jumpSensor)
     {
@@ -179,7 +179,7 @@
     return _jumpSensor;
 }
 
-- (JKSpriteNode*) leftSensor
+- (JKGameNode*) leftSensor
 {
     if (!_leftSensor)
     {
@@ -188,7 +188,7 @@
     return _leftSensor;
 }
 
-- (JKSpriteNode*) rightSensor
+- (JKGameNode*) rightSensor
 {
     if (!_rightSensor)
     {
