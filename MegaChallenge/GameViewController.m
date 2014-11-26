@@ -9,6 +9,7 @@
 #import <JKGameKit/JKGameKit.h>
 #import "GameViewController.h"
 #import "StageSelectLevel.h"
+#import "HeatManStage.h"
 #import "GameScene.h"
 
 @implementation SKScene (Unarchive)

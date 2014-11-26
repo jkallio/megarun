@@ -8,9 +8,9 @@
 
 #import "Defines.h"
 #import "StageBase.h"
-#import "PluginControllerHero.h"
+#import "PluginCtrlHero.h"
 
-@interface PluginControllerHero()
+@interface PluginCtrlHero()
 @property (nonatomic) NSTimeInterval timeSincePrevJump;
 @property (nonatomic) NSTimeInterval timeInAir;
 @property (nonatomic) NSTimeInterval jumpTimeout;
@@ -18,7 +18,7 @@
 - (CGVector) applyForces:(CGVector)curVelocity Timestep:(NSTimeInterval)dt;
 @end
 
-@implementation PluginControllerHero
+@implementation PluginCtrlHero
 @synthesize joypadLeftDown = _joypadLeftDown;
 @synthesize joypadRightDown = _joypadRightDown;
 @synthesize jumpButtonDown = _jumpButtonDown;
@@ -41,8 +41,9 @@
     return self;
 }
 
-- (void) onNodeEnter
+- (void) onGameBegin
 {
+    [super onGameBegin];
     self.state = STATE_TELEPORTING_DOWN;
 }
 
@@ -63,8 +64,6 @@
     {
         self.node.physicsBody.velocity = [self applyForces:self.node.physicsBody.velocity Timestep:dt];
     }
-    
-    //self.world.camera.targetPosition = self.node.position;
     
     self.timeSincePrevJump += dt;
     if (!self.onGround)
@@ -263,13 +262,6 @@
         }
     }
     _leftSensorContact = contact;
-
-    /*
-    JKDebugLog(@"Left=%@, Right=%@, Jump=%@",
-               _leftSensorContact ? @"YES" : @"NO",
-               _rightSensorContact ? @"YES" : @"NO",
-               _jumpSensorContact ? @"YES" : @"NO");
-    */
 }
 
 @end

@@ -9,10 +9,10 @@
 #import "Defines.h"
 #import "HudNode.h"
 #import "StageBase.h"
-#import "PluginControllerHero.h"
+#import "PluginCtrlHero.h"
 #import "PluginTouchHandlerHudButton.h"
 
-#define _heroCtrl ((PluginControllerHero*)self.world.hero.controller)
+#define _heroCtrl ((PluginCtrlHero*)self.world.hero.controller)
 
 @implementation PluginTouchHandlerHudButton
 

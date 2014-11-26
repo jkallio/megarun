@@ -8,11 +8,11 @@
 
 #import "Defines.h"
 #import "StageBase.h"
-#import "PluginControllerHero.h"
+#import "PluginCtrlHero.h"
 #import "PluginTouchHandlerHudButton.h"
 #import "HudNode.h"
 
-#define _heroCtrl ((PluginControllerHero*)self.world.hero.controller)
+#define _heroCtrl ((PluginCtrlHero*)self.world.hero.controller)
 
 typedef enum _EJoypadState
 {

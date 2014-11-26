@@ -7,7 +7,7 @@
 //
 
 #import <JKGameKit/JKGameKit.h>
-@class PluginControllerHero;
+@class PluginCtrlHero;
 
 @interface PluginTouchHandlerHudButton : JKPluginTouchHandlerBase
 @end

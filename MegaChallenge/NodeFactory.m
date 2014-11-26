@@ -7,7 +7,8 @@
 //
 
 #import "Defines.h"
-#import "PluginControllerHero.h"
+#import "PluginCtrlHero.h"
+#import "PluginCtrlDisappearingBlock.h"
 #import "PluginAnimationHero.h"
 #import "PluginContactHandlerHero.h"
 #import "PluginContactHandlerHeroJumpSensor.h"
@@ -34,7 +35,7 @@
                 
                 if (objTypeNum == OBJ_TYPE_TELEPAD)
                 {
-                    JKGameNode* hero = [NodeFactory createHeroWithPosition:CGPointMake(obj.position.x, 1000.0f)];
+                    JKGameNode* hero = [NodeFactory createHeroWithPosition:CGPointMake(obj.position.x, obj.position.y + 600.0f)];
                     [objects addObject:hero];
                 }
             }
@@ -104,7 +105,7 @@
     [anim.actions setObject:[PluginAnimationHero createAnimationWithFrames:[__sharedTextureCache getTexturesWithNameBase:@"gigaman_teleport" Count:1] Freq:1.0f Revert:NO] forKey:HERO_ANIM_KEY_TELEPORT];
     anim.idleAnimID = HERO_ANIM_KEY_STOP;
     
-    [PluginControllerHero createAndAttachToNode:hero];
+    [PluginCtrlHero createAndAttachToNode:hero];
     [PluginContactHandlerHero createAndAttachToNode:hero];
     
     JKGameNode* jumpSensor = [JKGameNode node];
@@ -172,6 +173,13 @@
     block.physicsBody.collisionBitMask = kCollisionMaskStaticObj;
     block.physicsBody.contactTestBitMask = kContactMaskStaticObj;
     
+    return block;
+}
+
++ (JKGameNode*) createDisappearingBlock:(NSInteger)type Position:(CGPoint)position
+{
+    JKGameNode* block = [NodeFactory createBlock:type Position:position];
+    [PluginCtrlDisappearingBlock createAndAttachToNode:block];
     return block;
 }
 

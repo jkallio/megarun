@@ -12,5 +12,6 @@
 @property (nonatomic, weak) JKGameNode* telePad;
 @property (nonatomic) NSInteger score;
 @property (nonatomic) NSInteger hiScore;
+@property (nonatomic, getter=isPitOfDeathEnabled) BOOL pitOfDeathEnabled;
 - (NSArray*) levelMap;
 @end

@@ -12,10 +12,10 @@
 #import "HeatManStage.h"
 #import "QuickManStage.h"
 #import "StageSelectLevel.h"
-#import "PluginControllerHero.h"
+#import "PluginCtrlHero.h"
 #import "PluginContactHandlerHeroRightSensor.h"
 
-#define _heroCtrl ((PluginControllerHero*)((JKGameNode*)self.node.parent).controller)
+#define _heroCtrl ((PluginCtrlHero*)((JKGameNode*)self.node.parent).controller)
 #define _heroNode ((JKGameNode*)self.node.parent)
 
 @implementation PluginContactHandlerHeroRightSensor

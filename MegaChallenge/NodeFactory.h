@@ -17,7 +17,8 @@
 
 + (JKGameNode*) createHeroWithPosition:(CGPoint)position;
 + (JKGameNode*) createTelePadWithPosition:(CGPoint)position;
-+ (JKGameNode*) createBlock:(NSInteger) type Position:(CGPoint)position;
-+ (JKGameNode*) createTeleport:(NSInteger) type Position:(CGPoint)position;
++ (JKGameNode*) createBlock:(NSInteger)type Position:(CGPoint)position;
++ (JKGameNode*) createDisappearingBlock:(NSInteger)type Position:(CGPoint)position;
++ (JKGameNode*) createTeleport:(NSInteger)type Position:(CGPoint)position;
 
 @end

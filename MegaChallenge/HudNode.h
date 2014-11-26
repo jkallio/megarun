@@ -8,7 +8,7 @@
 
 #import <JKGameKit/JKGameKit.h>
 @class StageBase;
-@class PluginControllerHero;
+@class PluginCtrlHero;
 
 @interface HudNode : JKHudNode
 

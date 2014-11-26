@@ -15,7 +15,7 @@ typedef enum _EState
     STATE_TELEPORTING_UP,
 } EState;
 
-@interface PluginControllerHero : JKPluginCtrlBase
+@interface PluginCtrlHero : JKPluginCtrlBase
 
 #pragma mark -- State
 @property (nonatomic) EState state;

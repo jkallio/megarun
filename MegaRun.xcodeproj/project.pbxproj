@@ -17,7 +17,7 @@
 		4A94AFA11A07C0030067AB66 /* libJKGameKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A94AF9C1A07BFF40067AB66 /* libJKGameKit.a */; };
 		4A94AFD11A08FA630067AB66 /* StageSelectLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFD01A08FA630067AB66 /* StageSelectLevel.m */; };
 		4A94AFD91A0900B40067AB66 /* NodeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFD81A0900B40067AB66 /* NodeFactory.m */; };
-		4A94AFDF1A090BE70067AB66 /* PluginControllerHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFDE1A090BE70067AB66 /* PluginControllerHero.m */; };
+		4A94AFDF1A090BE70067AB66 /* PluginCtrlHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFDE1A090BE70067AB66 /* PluginCtrlHero.m */; };
 		4A94AFE21A0911F70067AB66 /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFE11A0911F70067AB66 /* GameData.m */; };
 		4A94AFF01A09657E0067AB66 /* PluginAnimationHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFEF1A09657E0067AB66 /* PluginAnimationHero.m */; };
 		4A94AFFD1A0E42AC0067AB66 /* StageBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A94AFFC1A0E42AC0067AB66 /* StageBase.m */; };
@@ -33,6 +33,7 @@
 		4ABF50B11A126521006CD964 /* PluginTouchHandlerHudButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50B01A126521006CD964 /* PluginTouchHandlerHudButton.m */; };
 		4ABF50B71A126BA7006CD964 /* nintendoid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF50B61A126BA7006CD964 /* nintendoid.ttf */; };
 		4ABF50C51A18D2BD006CD964 /* PluginContactHandlerHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */; };
+		4AE79AA11A2278FA000EB366 /* PluginCtrlDisappearingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE79AA01A2278FA000EB366 /* PluginCtrlDisappearingBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,8 +81,8 @@
 		4A94AFD71A0900B40067AB66 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
 		4A94AFD81A0900B40067AB66 /* NodeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeFactory.m; sourceTree = "<group>"; };
 		4A94AFDA1A0900C60067AB66 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
-		4A94AFDD1A090BE70067AB66 /* PluginControllerHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginControllerHero.h; sourceTree = "<group>"; };
-		4A94AFDE1A090BE70067AB66 /* PluginControllerHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginControllerHero.m; sourceTree = "<group>"; };
+		4A94AFDD1A090BE70067AB66 /* PluginCtrlHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginCtrlHero.h; sourceTree = "<group>"; };
+		4A94AFDE1A090BE70067AB66 /* PluginCtrlHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginCtrlHero.m; sourceTree = "<group>"; };
 		4A94AFE01A0911F70067AB66 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		4A94AFE11A0911F70067AB66 /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		4A94AFEE1A09657E0067AB66 /* PluginAnimationHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginAnimationHero.h; sourceTree = "<group>"; };
@@ -108,6 +109,8 @@
 		4ABF50B61A126BA7006CD964 /* nintendoid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nintendoid.ttf; sourceTree = "<group>"; };
 		4ABF50C31A18D2BD006CD964 /* PluginContactHandlerHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContactHandlerHero.h; sourceTree = "<group>"; };
 		4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContactHandlerHero.m; sourceTree = "<group>"; };
+		4AE79A9F1A2278FA000EB366 /* PluginCtrlDisappearingBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginCtrlDisappearingBlock.h; sourceTree = "<group>"; };
+		4AE79AA01A2278FA000EB366 /* PluginCtrlDisappearingBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginCtrlDisappearingBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,8 +210,10 @@
 		4A94AFDC1A090BD40067AB66 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4A94AFDD1A090BE70067AB66 /* PluginControllerHero.h */,
-				4A94AFDE1A090BE70067AB66 /* PluginControllerHero.m */,
+				4A94AFDD1A090BE70067AB66 /* PluginCtrlHero.h */,
+				4A94AFDE1A090BE70067AB66 /* PluginCtrlHero.m */,
+				4AE79A9F1A2278FA000EB366 /* PluginCtrlDisappearingBlock.h */,
+				4AE79AA01A2278FA000EB366 /* PluginCtrlDisappearingBlock.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -393,8 +398,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A94AFDF1A090BE70067AB66 /* PluginControllerHero.m in Sources */,
+				4A94AFDF1A090BE70067AB66 /* PluginCtrlHero.m in Sources */,
 				4A94AFF01A09657E0067AB66 /* PluginAnimationHero.m in Sources */,
+				4AE79AA11A2278FA000EB366 /* PluginCtrlDisappearingBlock.m in Sources */,
 				4A94AFE21A0911F70067AB66 /* GameData.m in Sources */,
 				4A62824E1A1E8A7D009AAC5A /* HeatManStage.m in Sources */,
 				4A6282581A1E8ABA009AAC5A /* AirManStage.m in Sources */,

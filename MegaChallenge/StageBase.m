@@ -9,10 +9,10 @@
 #import "Defines.h"
 #import "HudNode.h"
 #import "NodeFactory.h"
-#import "PluginControllerHero.h"
+#import "PluginCtrlHero.h"
 #import "StageBase.h"
 
-#define _heroCtrl ((PluginControllerHero*)self.hero.controller)
+#define _heroCtrl ((PluginCtrlHero*)self.hero.controller)
 
 @implementation StageBase
 
@@ -43,6 +43,18 @@
     return hud;
 }
 
+
+- (void) onGameBegin
+{
+    JKDebugLog(@"Game start");
+}
+
+- (void) onGameOver
+{
+    JKDebugLog(@"Game over");
+    [self.gameScene startGame];
+}
+
 - (void) onUpdate:(NSTimeInterval)dt
 {
     switch (_heroCtrl.state)
@@ -51,6 +63,11 @@
         case STATE_TELEPORTING_DOWN: self.camera.targetPosition = self.telePad.position; break;
         case STATE_TELEPORTING_UP: break; // no update;
         default: break;
+    }
+    
+    if (self.pitOfDeathEnabled && self.hero.position.y < -1000.0f)
+    {
+        [self.gameScene endGame];
     }
 }
 

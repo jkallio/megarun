@@ -7,10 +7,10 @@
 //
 
 #import "Defines.h"
-#import "PluginControllerHero.h"
+#import "PluginCtrlHero.h"
 #import "PluginAnimationHero.h"
 
-#define _heroCtrl ((PluginControllerHero*)((JKGameNode*)self.node.parent).controller)
+#define _heroCtrl ((PluginCtrlHero*)((JKGameNode*)self.node.parent).controller)
 #define _heroBody ((JKGameNode*)self.node.parent).physicsBody
 
 static const float kFlipLimit = 50.0f;
