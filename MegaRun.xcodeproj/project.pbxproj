@@ -33,6 +33,10 @@
 		4ABF50B11A126521006CD964 /* PluginTouchHandlerHudButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50B01A126521006CD964 /* PluginTouchHandlerHudButton.m */; };
 		4ABF50B71A126BA7006CD964 /* nintendoid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF50B61A126BA7006CD964 /* nintendoid.ttf */; };
 		4ABF50C51A18D2BD006CD964 /* PluginContactHandlerHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */; };
+		4AC616C51A5C091700E56184 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC616C31A5C091700E56184 /* laser.png */; };
+		4AC616C61A5C091700E56184 /* laser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AC616C41A5C091700E56184 /* laser@2x.png */; };
+		4AC616CD1A5C16ED00E56184 /* PluginCtrlLaser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC616CC1A5C16ED00E56184 /* PluginCtrlLaser.m */; };
+		4AC616D01A5C796500E56184 /* SKTexture+PatternAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC616CF1A5C796500E56184 /* SKTexture+PatternAddition.m */; };
 		4AE79AA11A2278FA000EB366 /* PluginCtrlDisappearingBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE79AA01A2278FA000EB366 /* PluginCtrlDisappearingBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +113,12 @@
 		4ABF50B61A126BA7006CD964 /* nintendoid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nintendoid.ttf; sourceTree = "<group>"; };
 		4ABF50C31A18D2BD006CD964 /* PluginContactHandlerHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginContactHandlerHero.h; sourceTree = "<group>"; };
 		4ABF50C41A18D2BD006CD964 /* PluginContactHandlerHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginContactHandlerHero.m; sourceTree = "<group>"; };
+		4AC616C31A5C091700E56184 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = laser.png; path = Patterns/laser.png; sourceTree = "<group>"; };
+		4AC616C41A5C091700E56184 /* laser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "laser@2x.png"; path = "Patterns/laser@2x.png"; sourceTree = "<group>"; };
+		4AC616CB1A5C16ED00E56184 /* PluginCtrlLaser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginCtrlLaser.h; sourceTree = "<group>"; };
+		4AC616CC1A5C16ED00E56184 /* PluginCtrlLaser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginCtrlLaser.m; sourceTree = "<group>"; };
+		4AC616CE1A5C796500E56184 /* SKTexture+PatternAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKTexture+PatternAddition.h"; sourceTree = "<group>"; };
+		4AC616CF1A5C796500E56184 /* SKTexture+PatternAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+PatternAddition.m"; sourceTree = "<group>"; };
 		4AE79A9F1A2278FA000EB366 /* PluginCtrlDisappearingBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginCtrlDisappearingBlock.h; sourceTree = "<group>"; };
 		4AE79AA01A2278FA000EB366 /* PluginCtrlDisappearingBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginCtrlDisappearingBlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +189,7 @@
 				4ABF50B41A126B90006CD964 /* Fonts */,
 				4AA0F8011A06DCC200E5756D /* CommonArt.atlas */,
 				4AA0F7E81A06DC3600E5756D /* Images.xcassets */,
+				4AC616BD1A5C08A700E56184 /* Patterns */,
 				4AA0F7D61A06DC3600E5756D /* Supporting Files */,
 			);
 			name = Resources;
@@ -187,6 +198,8 @@
 		4A94AFD61A0900830067AB66 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4AC616CE1A5C796500E56184 /* SKTexture+PatternAddition.h */,
+				4AC616CF1A5C796500E56184 /* SKTexture+PatternAddition.m */,
 				4A94AFDA1A0900C60067AB66 /* Defines.h */,
 				4A94AFE01A0911F70067AB66 /* GameData.h */,
 				4A94AFE11A0911F70067AB66 /* GameData.m */,
@@ -214,6 +227,8 @@
 				4A94AFDE1A090BE70067AB66 /* PluginCtrlHero.m */,
 				4AE79A9F1A2278FA000EB366 /* PluginCtrlDisappearingBlock.h */,
 				4AE79AA01A2278FA000EB366 /* PluginCtrlDisappearingBlock.m */,
+				4AC616CB1A5C16ED00E56184 /* PluginCtrlLaser.h */,
+				4AC616CC1A5C16ED00E56184 /* PluginCtrlLaser.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +317,15 @@
 			name = ContactHandlers;
 			sourceTree = "<group>";
 		};
+		4AC616BD1A5C08A700E56184 /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				4AC616C31A5C091700E56184 /* laser.png */,
+				4AC616C41A5C091700E56184 /* laser@2x.png */,
+			);
+			name = Patterns;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,9 +409,11 @@
 			files = (
 				4AA0F8021A06DCC200E5756D /* CommonArt.atlas in Resources */,
 				4ABF50B71A126BA7006CD964 /* nintendoid.ttf in Resources */,
+				4AC616C61A5C091700E56184 /* laser@2x.png in Resources */,
 				4AA0F7EC1A06DC3600E5756D /* LaunchScreen.xib in Resources */,
 				4AA0F7E91A06DC3600E5756D /* Images.xcassets in Resources */,
 				4AA0F7E71A06DC3600E5756D /* Main.storyboard in Resources */,
+				4AC616C51A5C091700E56184 /* laser.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +429,7 @@
 				4AE79AA11A2278FA000EB366 /* PluginCtrlDisappearingBlock.m in Sources */,
 				4A94AFE21A0911F70067AB66 /* GameData.m in Sources */,
 				4A62824E1A1E8A7D009AAC5A /* HeatManStage.m in Sources */,
+				4AC616CD1A5C16ED00E56184 /* PluginCtrlLaser.m in Sources */,
 				4A6282581A1E8ABA009AAC5A /* AirManStage.m in Sources */,
 				4A94AFD91A0900B40067AB66 /* NodeFactory.m in Sources */,
 				4ABF50AA1A124BA2006CD964 /* HudNode.m in Sources */,
@@ -417,6 +444,7 @@
 				4ABF50B11A126521006CD964 /* PluginTouchHandlerHudButton.m in Sources */,
 				4A6282521A1E8A8A009AAC5A /* QuickManStage.m in Sources */,
 				4ABF50C51A18D2BD006CD964 /* PluginContactHandlerHero.m in Sources */,
+				4AC616D01A5C796500E56184 /* SKTexture+PatternAddition.m in Sources */,
 				4A94AFD11A08FA630067AB66 /* StageSelectLevel.m in Sources */,
 				4A94AFFD1A0E42AC0067AB66 /* StageBase.m in Sources */,
 			);

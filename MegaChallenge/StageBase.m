@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Kallio. All rights reserved.
 //
 
+#import <JKGameKit/JKUtils.h>
 #import "Defines.h"
 #import "HudNode.h"
 #import "NodeFactory.h"
@@ -22,9 +23,9 @@
     return nil;
 }
 
-- (void) LoadLevel
+- (void) loadLevel
 {
-    [super LoadLevel];
+    [super loadLevel];
         
     NSArray* levelObjects = [NodeFactory createLevelMap:[self levelMap]];
     for (JKGameNode* node in levelObjects)
@@ -65,7 +66,7 @@
         default: break;
     }
     
-    if (self.pitOfDeathEnabled && self.hero.position.y < -1000.0f)
+    if ((self.hero.position.y < self.camera.position.y - 300.0f) || (self.pitOfDeathEnabled && self.hero.position.y < -1000.0f))
     {
         [self.gameScene endGame];
     }
@@ -78,6 +79,104 @@
         _telePad = [JKGameNode cast:[self childNodeWithName:NODE_NAME_TELEPAD]];
     }
     return _telePad;
+}
+
+- (JKGameNode*) currentBlock
+{
+    return [self blockAtIndex:self.blockPoolIterator];
+}
+
+- (JKGameNode*) lastBlock
+{
+    return [self blockAtIndex:self.blockPoolIterator Offset:(self.blockPool.count/2 - 1)];
+}
+
+- (JKGameNode*) getNextBlockAndIncrement
+{
+    JKGameNode* block = [self blockAtIndex:self.blockPoolIterator Offset:self.blockPool.count/2];
+    ++self.blockPoolIterator;
+    return block;
+}
+
+- (JKGameNode*) blockAtIndex:(NSInteger)index
+{
+    return [self blockAtIndex:index Offset:0];
+}
+
+- (JKGameNode*) blockAtIndex:(NSInteger)index Offset:(NSInteger)offset
+{
+    JKGameNode* block = nil;
+    
+    if (self.blockPool != nil)
+    {
+        index = moduloPositive((index+offset), self.blockPool.count);
+        if (index >= 0 && index < self.blockPool.count)
+        {
+            block = [self.blockPool objectAtIndex:index];
+        }
+    }
+    return block;
+}
+
+- (JKGameNode*) currentKeyBlock
+{
+    return [self keyBlockAtIndex:self.keyBlockPoolIterator];
+}
+
+- (JKGameNode*) lastKeyBlock
+{
+    return [self keyBlockAtIndex:self.keyBlockPoolIterator Offset:(self.keyBlockPool.count/2 - 1)];
+}
+
+- (JKGameNode*) getNextKeyBlockAndIncrement
+{
+    JKGameNode* keyBlock = [self keyBlockAtIndex:self.keyBlockPoolIterator Offset:self.keyBlockPool.count/2];
+    ++self.keyBlockPoolIterator;
+    return keyBlock;
+}
+
+- (JKGameNode*) keyBlockAtIndex:(NSInteger)index
+{
+    return [self keyBlockAtIndex:index Offset:0];
+}
+
+- (JKGameNode*) keyBlockAtIndex:(NSInteger)index Offset:(NSInteger)offset
+{
+    JKGameNode* keyBlock = nil;
+    
+    if (self.keyBlockPool != nil)
+    {
+        index = moduloPositive((index+offset), self.keyBlockPool.count);
+        if (index >= 0 && index < self.keyBlockPool.count)
+        {
+            keyBlock = [self.keyBlockPool objectAtIndex:index];
+        }
+    }
+    return keyBlock;
+}
+
+- (void) setBlockPoolIterator:(NSInteger)blockPoolIterator
+{
+    if (self.blockPool != nil)
+    {
+        _blockPoolIterator = moduloPositive(blockPoolIterator, self.blockPool.count);
+    }
+    else
+    {
+        _blockPoolIterator = blockPoolIterator;
+    }
+}
+
+- (void) setKeyBlockPoolIterator:(NSInteger)keyBlockPoolIterator
+{
+    if (self.keyBlockPool != nil)
+    {
+        _keyBlockPoolIterator = moduloPositive(keyBlockPoolIterator, self.keyBlockPool.count);
+    }
+    else
+    {
+        _keyBlockPoolIterator = keyBlockPoolIterator;
+    }
 }
 
 @end

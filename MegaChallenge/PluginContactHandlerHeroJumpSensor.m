@@ -23,34 +23,37 @@ static const float kSwitchDelay = 0.75f;
 
 - (void) contactBeganWith:(JKGameNode*)nodeB
 {
-    if (nodeB.objType == OBJ_TYPE_SENSOR && !_heroCtrl.isTeleporting)
+    switch (nodeB.objType)
     {
-        _heroCtrl.state = STATE_TELEPORTING_UP;
-        switch ([JKGameNode cast:nodeB.parent].objType)
+        case OBJ_TYPE_SENSOR:
         {
-            case OBJ_TYPE_TELEPORT_QUICKMAN:    [self.gameScene switchToLevel:[QuickManStage node] Delay:kSwitchDelay]; break;
-            case OBJ_TYPE_TELEPORT_HEATMAN:     [self.gameScene switchToLevel:[HeatManStage node] Delay:kSwitchDelay]; break;
-            case OBJ_TYPE_TELEPORT_BUBBLEMAN:   [self.gameScene switchToLevel:[BubbleManStage node] Delay:kSwitchDelay]; break;
-            case OBJ_TYPE_TELEPORT_AIRMAN:      [self.gameScene switchToLevel:[AirManStage node] Delay:kSwitchDelay]; break;
-            case OBJ_TYPE_TELEPORT_STAGESEL:    [self.gameScene switchToLevel:[StageSelectLevel node] Delay:kSwitchDelay]; break;
-            default: break;
-        }
-    }
-    else
-    {
-        switch (nodeB.objType)
+            if (!_heroCtrl.isTeleporting)
+            {
+                _heroCtrl.state = STATE_TELEPORTING_UP;
+                switch ([JKGameNode cast:nodeB.parent].objType)
+                {
+                    case OBJ_TYPE_TELEPORT_QUICKMAN:    [self.gameScene switchToLevel:[QuickManStage node] Delay:kSwitchDelay]; break;
+                    case OBJ_TYPE_TELEPORT_HEATMAN:     [self.gameScene switchToLevel:[HeatManStage node] Delay:kSwitchDelay]; break;
+                    case OBJ_TYPE_TELEPORT_BUBBLEMAN:   [self.gameScene switchToLevel:[BubbleManStage node] Delay:kSwitchDelay]; break;
+                    case OBJ_TYPE_TELEPORT_AIRMAN:      [self.gameScene switchToLevel:[AirManStage node] Delay:kSwitchDelay]; break;
+                    case OBJ_TYPE_TELEPORT_STAGESEL:    [self.gameScene switchToLevel:[StageSelectLevel node] Delay:kSwitchDelay]; break;
+                    default: break;
+                }
+            }
+        } break;
+            
+        case OBJ_TYPE_TELEPAD:
         {
-            case OBJ_TYPE_TELEPAD: _heroCtrl.state = STATE_NORMAL; break;
-            default: break;
-        }
+            _heroCtrl.state = STATE_NORMAL;
+        } break;
+            
+        default:
+            break;
     }
-    
-    [_heroCtrl updateContactFlags];
 }
 
 - (void) contactEndedWith:(JKGameNode*)nodeB
 {
-    [_heroCtrl updateContactFlags];
 }
 
 @end

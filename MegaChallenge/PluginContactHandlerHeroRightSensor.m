@@ -22,12 +22,10 @@
 
 - (void) contactBeganWith:(JKGameNode*)nodeB
 {
-    [_heroCtrl updateContactFlags];
 }
 
 - (void) contactEndedWith:(JKGameNode*)nodeB
 {
-    [_heroCtrl updateContactFlags];
 }
 
 @end

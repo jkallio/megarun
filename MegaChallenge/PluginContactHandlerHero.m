@@ -14,16 +14,25 @@
 #import "StageSelectLevel.h"
 #import "PluginContactHandlerHero.h"
 
+#define _heroCtrl ((PluginCtrlHero*)((JKGameNode*)self.node).controller)
+
 @implementation PluginContactHandlerHero
 
 - (void) contactBeganWith:(JKGameNode*)nodeB
 {
-    
+    switch (nodeB.objType)
+    {
+        case OBJ_TYPE_LASER:
+        {
+            [self.gameScene endGame];
+        } break;
+            
+        default: break;
+    }
 }
 
 - (void) contactEndedWith:(JKGameNode*)nodeB
 {
-    
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "Defines.h"
 #import "PluginCtrlHero.h"
+#import "PluginCtrlLaser.h"
 #import "PluginCtrlDisappearingBlock.h"
 #import "PluginAnimationHero.h"
 #import "PluginContactHandlerHero.h"
@@ -70,7 +71,8 @@
         case OBJ_TYPE_TELEPORT_AIRMAN:      // no break
         case OBJ_TYPE_TELEPORT_STAGESEL:    obj = [NodeFactory createTeleport:type Position:position]; break;
             
-        case OBJ_TYPE_TELEPAD: obj = [NodeFactory createTelePadWithPosition:position]; break; 
+        case OBJ_TYPE_TELEPAD: obj = [NodeFactory createTelePadWithPosition:position]; break;
+        case OBJ_TYPE_LASER: obj = [NodeFactory createLaserWithPosition:position]; break;
             
         default: JKAssert(NO, @"TODO: Invalid type"); break;
     }
@@ -204,11 +206,31 @@
     
     JKGameNode* sensor = [JKGameNode node];
     sensor.objType = OBJ_TYPE_SENSOR;
-    sensor.spriteNode = [JKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(teleport.spriteNode.size.width/10, teleport.spriteNode.size.height/3)];
+    sensor.spriteNode = [JKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(teleport.spriteNode.size.width/10, teleport.spriteNode.size.height/3)];
     sensor.position = CGPointMake(0, teleport.spriteNode.size.height/2);
     [teleport setSensor:sensor Name:SENSOR_NAME_TELEPORT];
     
     return teleport;
+}
+
++ (JKGameNode *)createLaserWithPosition:(CGPoint)position
+{
+    JKGameNode* laser = [JKGameNode node];
+    laser.objType = OBJ_TYPE_LASER;
+    
+    laser.name = NODE_NAME_LASER;
+    laser.zPosition = Z_POS_LASER;
+    laser.spriteNode = [JKSpriteNode spriteNodeWithTexture:[__sharedTextureCache getTexturePatternNamed:@"laser" Size:CGSizeMake(40 * kBlockWidth, 2 * kBlockHeight)]];
+    
+    laser.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:laser.spriteNode.size];
+    laser.physicsBody.affectedByGravity = NO;
+    laser.physicsBody.categoryBitMask = kCatSensor;
+    laser.physicsBody.collisionBitMask = kCollisionMaskSensor;
+    laser.physicsBody.contactTestBitMask = kContactMaskSensor;
+    
+    [PluginCtrlLaser createAndAttachToNode:laser];
+    
+    return laser;
 }
 
 @end

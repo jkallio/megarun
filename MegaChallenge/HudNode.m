@@ -100,7 +100,9 @@ typedef enum _EBtnState
     self.lblHiScore.position = CGPointMake(self.lblHiScore.frame.size.width/2 + PIXELS(10), self.scene.size.height - PIXELS(30));
     */
     
-    JKSpriteNode* debugDecrease = [JKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30.0f, 30.0f)];
+    static float dbSize = 20.0f;
+    
+    JKSpriteNode* debugDecrease = [JKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(dbSize, dbSize)];
     debugDecrease.name = @"debugDecrease";
     debugDecrease.zPosition = Z_POS_HUD;
     debugDecrease.position = CGPointMake(self.scene.size.width/2 - 120.0f, self.scene.size.height - debugDecrease.size.height/1.5f);
@@ -108,7 +110,7 @@ typedef enum _EBtnState
     [self createBackframeForNode:debugDecrease];
     [self addChild:debugDecrease];
     
-    JKSpriteNode* debugIncrease = [JKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(30.0f, 30.0f)];
+    JKSpriteNode* debugIncrease = [JKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(dbSize, dbSize)];
     debugIncrease.name = @"debugIncrease";
     debugIncrease.zPosition = Z_POS_HUD;
     debugIncrease.position = CGPointMake(self.scene.size.width/2 + 120.0f, debugDecrease.position.y);
@@ -116,12 +118,19 @@ typedef enum _EBtnState
     [self createBackframeForNode:debugIncrease];
     [self addChild:debugIncrease];
     
+    JKSpriteNode* debugChange = [JKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(dbSize, dbSize)];
+    debugChange.name = @"debugChange";
+    debugChange.zPosition = Z_POS_HUD;
+    debugChange.position = CGPointMake(self.scene.size.width - 2*dbSize, debugDecrease.position.y);
+    [PluginTouchHandlerHudButton createAndAttachToNode:debugChange];
+    [self createBackframeForNode:debugChange];
+    [self addChild:debugChange];
+    
     JKShadowedLabelNode* debugLabel = [JKShadowedLabelNode labelNodeWithFontNamed:@"Nintendoid-1"];
     debugLabel.name = @"debugLabel";
     debugLabel.zPosition = Z_POS_HUD;
     debugLabel.position = CGPointMake(self.scene.size.width/2, self.scene.size.height - PIXELS(20));
     debugLabel.fontSize = 10;
-    [PluginTouchHandlerHudButton createAndAttachToNode:debugLabel];
     debugLabel.fontColor = [UIColor whiteColor];
     [self addChild:debugLabel];
     _debugLabel = debugLabel;

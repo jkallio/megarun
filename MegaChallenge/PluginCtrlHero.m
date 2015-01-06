@@ -27,8 +27,8 @@
 {
     if (self = [super initWithNode:node])
     {
-        _runSpeed = 200.0f;
-        _jumpForce = 70.0f;
+        _runSpeed = 180.0f;
+        _jumpForce = 60.0f;
         _timeInAir = 0.0f;
         _maxVelocity = CGVectorMake(250.0f, 400.0f);
         
@@ -70,6 +70,8 @@
     {
         self.timeInAir += dt;
     }
+    
+    [self updateContactFlags];
 }
 
 #pragma mark --
@@ -230,38 +232,35 @@
 
 - (void) updateContactFlags
 {
-    BOOL contact = NO;
+    _jumpSensorContact = NO;
     for (SKPhysicsBody* body in self.jumpSensor.physicsBody.allContactedBodies)
     {
         if (body.collisionBitMask & self.node.physicsBody.collisionBitMask)
         {
-            contact = YES;
+            _jumpSensorContact = YES;
             break;
         }
     }
-    _jumpSensorContact = contact;
     
-    contact = NO;
+    _rightSensorContact = NO;
     for (SKPhysicsBody* body in self.rightSensor.physicsBody.allContactedBodies)
     {
         if (body.collisionBitMask & self.node.physicsBody.collisionBitMask)
         {
-            contact = YES;
+            _rightSensorContact = YES;
             break;
         }
     }
-    _rightSensorContact = contact;
     
-    contact = NO;
+    _leftSensorContact = NO;
     for (SKPhysicsBody* body in self.leftSensor.physicsBody.allContactedBodies)
     {
         if (body.collisionBitMask & self.node.physicsBody.collisionBitMask)
         {
-            contact = YES;
+            _leftSensorContact = YES;
             break;
         }
     }
-    _leftSensorContact = contact;
 }
 
 @end

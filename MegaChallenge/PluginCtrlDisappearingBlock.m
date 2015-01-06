@@ -55,7 +55,6 @@
         self.gameNode.alpha = 0.0f;
     }
     _isHidden = !_isHidden;
-    [_heroCtrl updateContactFlags];
 }
 
 - (void) setPhase:(NSInteger)phase

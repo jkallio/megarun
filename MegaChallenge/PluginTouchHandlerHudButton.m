@@ -43,7 +43,7 @@
     {
         [((HudNode*)self.hud) increaseDebug];
     }
-    else if ([self.node.name isEqualToString:@"debugLabel"])
+    else if ([self.node.name isEqualToString:@"debugChange"])
     {
         ((HudNode*)self.hud).debugSelectedItem++;
     }

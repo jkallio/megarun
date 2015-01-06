@@ -40,9 +40,9 @@
              X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X, X];
 }
 
-- (void) LoadLevel
+- (void) loadLevel
 {
-    [super LoadLevel];
+    [super loadLevel];
 }
 
 @end

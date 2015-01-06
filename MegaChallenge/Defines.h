@@ -32,7 +32,8 @@
 #define OBJ_TYPE_SPECIAL_BASE       OBJ_TYPE_TELEPORT_END
 #define OBJ_TYPE_SENSOR             OBJ_TYPE_SPECIAL_BASE + 1
 #define OBJ_TYPE_TELEPAD            OBJ_TYPE_SPECIAL_BASE + 2
-#define OBJ_TYPE_SPECIAL_END        OBJ_TYPE_SPEICAL_BASE + 3
+#define OBJ_TYPE_LASER              OBJ_TYPE_SPECIAL_BASE + 3
+#define OBJ_TYPE_SPECIAL_END        OBJ_TYPE_SPEICAL_BASE + 4
 
 #define IS_DYNAMIC_NODE(x) (x > OBJ_TYPE_DYNAMIC_BASE && x < OBJ_TYPE_DYNAMIC_END)
 #define IS_STATIC_NODE(x) (x > OBJ_TYPE_STATIC_BASE && x < OBJ_TYPE_STATIC_END)
@@ -48,6 +49,7 @@
 #define NODE_NAME_BLOCK         @"NameBlock"
 #define NODE_NAME_TELEPORT      @"NameTeleport"
 #define NODE_NAME_TELEPAD       @"NameTelepad"
+#define NODE_NAME_LASER         @"NameLaser"
 
 #define SENSOR_NAME_JUMP        @"SensorJump"
 #define SENSOR_NAME_LEFT        @"SensorLeft"
@@ -55,6 +57,7 @@
 #define SENSOR_NAME_TELEPORT    @"SensorTeleport"
 
 #define Z_POS_HUD       100
+#define Z_POS_LASER     20
 #define Z_POS_HERO      10
 #define Z_POS_STATIC    9
 

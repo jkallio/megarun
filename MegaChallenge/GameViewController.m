@@ -10,6 +10,7 @@
 #import "GameViewController.h"
 #import "StageSelectLevel.h"
 #import "HeatManStage.h"
+#import "QuickManStage.h"
 #import "GameScene.h"
 
 @implementation SKScene (Unarchive)
@@ -48,7 +49,7 @@
     skView.ignoresSiblingOrder = YES; // Sprite Kit applies additional optimizations to improve rendering performance
     
     // Create and configure the scene.
-    GameScene *scene = [GameScene sceneWithSize:skView.bounds.size Level:[StageSelectLevel node]];
+    GameScene *scene = [GameScene sceneWithSize:skView.bounds.size Level:[QuickManStage node]];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
